@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f5f7fb">
-    <title>Image Q&amp;A</title>
+    <title>Excel Q&amp;A</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main class="shell">
       <header class="intro">
         <p class="eyebrow">LOCAL MULTIMODAL SEARCH</p>
-        <h1>Ask your images</h1>
-        <p class="subtitle">Ask a question and get an answer grounded in your indexed photos.</p>
+        <h1>Ask your Excel files</h1>
+        <p class="subtitle">Ask anything about your indexed spreadsheets — tables, charts, and embedded images are all searchable.</p>
       </header>
 
       <section class="panel" aria-labelledby="question-label">
@@ -23,11 +23,11 @@
             name="question"
             rows="3"
             maxlength="1000"
-            placeholder="What can you see in the photos?"
+            placeholder="e.g. What were the Q3 sales figures for Widget A?"
             required
           ></textarea>
           <div class="form-footer">
-            <span class="hint">Your question is processed locally.</span>
+            <span class="hint">Runs entirely on your local models.</span>
             <button id="submit-button" type="submit">
               <span class="button-label">Ask</span>
               <span aria-hidden="true">→</span>
@@ -36,36 +36,37 @@
         </form>
 
         <p id="status" class="status" role="status" aria-live="polite"></p>
+
         <section id="answer-card" class="answer-card" aria-labelledby="answer-heading" hidden>
           <h2 id="answer-heading">Answer</h2>
           <div id="answer" class="markdown-body"></div>
-          <h2 class="retrieved-heading">Retrieved images</h2>
+
+          <h2 class="retrieved-heading">Top retrieved sources</h2>
           <ul id="retrieved-list" class="retrieved-list"></ul>
         </section>
       </section>
 
       <footer>Embeddings and answers run through your local models.</footer>
     </main>
+
     <script>
-      const form = document.querySelector("#question-form");
-      const button = document.querySelector("#submit-button");
-      const status = document.querySelector("#status");
-      const answerCard = document.querySelector("#answer-card");
-      const answer = document.querySelector("#answer");
+      const form          = document.querySelector("#question-form");
+      const button        = document.querySelector("#submit-button");
+      const status        = document.querySelector("#status");
+      const answerCard    = document.querySelector("#answer-card");
+      const answerEl      = document.querySelector("#answer");
       const retrievedList = document.querySelector("#retrieved-list");
 
+      /* ── minimal markdown renderer ── */
       function appendInlineMarkdown(parent, text) {
         const pattern = /\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|`([^`]+)`|\*\*([^*]+)\*\*|__([^_]+)__|~~([^~]+)~~|\*([^*]+)\*|_([^_]+)_/g;
         let lastIndex = 0;
-
         for (const match of text.matchAll(pattern)) {
           parent.append(document.createTextNode(text.slice(lastIndex, match.index)));
           let node;
           if (match[1] !== undefined) {
             let url;
-            try {
-              url = new URL(match[2], window.location.href);
-            } catch {
+            try { url = new URL(match[2], window.location.href); } catch {
               parent.append(document.createTextNode(match[0]));
               lastIndex = match.index + match[0].length;
               continue;
@@ -78,20 +79,15 @@
             node = document.createElement("a");
             node.href = url.href;
             node.textContent = match[1];
-            if (url.protocol !== "mailto:") {
-              node.target = "_blank";
-              node.rel = "noopener noreferrer";
-            }
+            if (url.protocol !== "mailto:") { node.target = "_blank"; node.rel = "noopener noreferrer"; }
             if (match[3]) node.title = match[3];
           } else if (match[4] !== undefined) {
             node = document.createElement("code");
             node.textContent = match[4];
           } else {
-            const content = match.slice(5).find((part) => part !== undefined);
-            const emphasisIndex = match.slice(5).findIndex((part) => part !== undefined);
-            node = document.createElement(
-              emphasisIndex <= 1 ? "strong" : emphasisIndex === 2 ? "del" : "em",
-            );
+            const content = match.slice(5).find(p => p !== undefined);
+            const idx     = match.slice(5).findIndex(p => p !== undefined);
+            node = document.createElement(idx <= 1 ? "strong" : idx === 2 ? "del" : "em");
             node.textContent = content;
           }
           parent.append(node);
@@ -101,26 +97,20 @@
       }
 
       function renderMarkdown(markdown) {
-        const root = document.createDocumentFragment();
+        const root  = document.createDocumentFragment();
         const lines = markdown.replace(/\r\n?/g, "\n").split("\n");
-        let index = 0;
+        let index   = 0;
 
         while (index < lines.length) {
           const line = lines[index];
-          if (!line.trim()) {
-            index += 1;
-            continue;
-          }
+          if (!line.trim()) { index++; continue; }
 
           const fence = line.match(/^```(\w*)\s*$/);
           if (fence) {
             const codeLines = [];
-            index += 1;
-            while (index < lines.length && !/^```\s*$/.test(lines[index])) {
-              codeLines.push(lines[index]);
-              index += 1;
-            }
-            if (index < lines.length) index += 1;
+            index++;
+            while (index < lines.length && !/^```\s*$/.test(lines[index])) { codeLines.push(lines[index]); index++; }
+            if (index < lines.length) index++;
             const pre = document.createElement("pre");
             const code = document.createElement("code");
             if (fence[1]) code.className = `language-${fence[1]}`;
@@ -132,29 +122,23 @@
 
           const heading = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
           if (heading) {
-            const element = document.createElement(`h${heading[1].length}`);
-            appendInlineMarkdown(element, heading[2]);
-            root.append(element);
-            index += 1;
-            continue;
+            const el = document.createElement(`h${heading[1].length}`);
+            appendInlineMarkdown(el, heading[2]);
+            root.append(el); index++; continue;
           }
 
           if (/^\s*(?:(?:-{3,}|_{3,}|\*{3,})\s*)$/.test(line)) {
-            root.append(document.createElement("hr"));
-            index += 1;
-            continue;
+            root.append(document.createElement("hr")); index++; continue;
           }
 
           if (/^\s*>\s?/.test(line)) {
-            const quoteLines = [];
+            const qLines = [];
             while (index < lines.length && /^\s*>\s?/.test(lines[index])) {
-              quoteLines.push(lines[index].replace(/^\s*>\s?/, ""));
-              index += 1;
+              qLines.push(lines[index].replace(/^\s*>\s?/, "")); index++;
             }
-            const quote = document.createElement("blockquote");
-            quote.append(renderMarkdown(quoteLines.join("\n")));
-            root.append(quote);
-            continue;
+            const q = document.createElement("blockquote");
+            q.append(renderMarkdown(qLines.join("\n")));
+            root.append(q); continue;
           }
 
           const listItem = line.match(/^\s*([-*+]|\d+[.)])\s+(.+)$/);
@@ -162,41 +146,55 @@
             const ordered = /^\d/.test(listItem[1]);
             const list = document.createElement(ordered ? "ol" : "ul");
             while (index < lines.length) {
-              const itemMatch = lines[index].match(/^\s*([-*+]|\d+[.)])\s+(.+)$/);
-              if (!itemMatch || /^\d/.test(itemMatch[1]) !== ordered) break;
-              const item = document.createElement("li");
-              appendInlineMarkdown(item, itemMatch[2]);
-              list.append(item);
-              index += 1;
+              const m = lines[index].match(/^\s*([-*+]|\d+[.)])\s+(.+)$/);
+              if (!m || /^\d/.test(m[1]) !== ordered) break;
+              const li = document.createElement("li");
+              appendInlineMarkdown(li, m[2]);
+              list.append(li); index++;
             }
-            root.append(list);
-            continue;
+            root.append(list); continue;
           }
 
-          const paragraphLines = [line.trim()];
-          index += 1;
+          const pLines = [line.trim()];
+          index++;
           while (
-            index < lines.length &&
-            lines[index].trim() &&
+            index < lines.length && lines[index].trim() &&
             !/^(?:```|#{1,6}\s|>\s?|[-*+]\s+|\d+[.)]\s+)/.test(lines[index]) &&
             !/^\s*(?:(?:-{3,}|_{3,}|\*{3,})\s*)$/.test(lines[index])
-          ) {
-            paragraphLines.push(lines[index].trim());
-            index += 1;
-          }
-          const paragraph = document.createElement("p");
-          appendInlineMarkdown(paragraph, paragraphLines.join(" "));
-          root.append(paragraph);
+          ) { pLines.push(lines[index].trim()); index++; }
+          const p = document.createElement("p");
+          appendInlineMarkdown(p, pLines.join(" "));
+          root.append(p);
         }
-
         return root;
       }
 
+      /* ── kind badge colours ── */
+      const KIND_COLOURS = {
+        table:  { bg: "#e8f5e9", text: "#2e7d32" },
+        image:  { bg: "#e3f2fd", text: "#1565c0" },
+        chart:  { bg: "#fff3e0", text: "#e65100" },
+      };
+
+      function kindBadge(kind) {
+        const badge = document.createElement("span");
+        const col   = KIND_COLOURS[kind] || { bg: "#f0f0f0", text: "#555" };
+        badge.textContent = kind.toUpperCase();
+        badge.style.cssText = `
+          display:inline-block; padding:2px 8px; border-radius:5px;
+          background:${col.bg}; color:${col.text};
+          font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+          flex-shrink:0;
+        `;
+        return badge;
+      }
+
+      /* ── form submit ── */
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         button.disabled = true;
-        status.textContent = "Searching your images…";
-        answerCard.hidden = true;
+        status.textContent = "Searching your Excel files…";
+        answerCard.hidden  = true;
 
         try {
           const response = await fetch("/ask", {
@@ -205,21 +203,33 @@
             body: new URLSearchParams(new FormData(form)),
           });
           const result = await response.json();
-          if (!response.ok) {
-            throw new Error(result.error || "The query could not be completed.");
-          }
-          answer.replaceChildren(renderMarkdown(result.answer));
+          if (!response.ok) throw new Error(result.error || "The query could not be completed.");
+
+          answerEl.replaceChildren(renderMarkdown(result.answer));
           retrievedList.replaceChildren();
-          for (const image of result.retrieved) {
-            const item = document.createElement("li");
-            const filename = document.createElement("span");
-            const score = document.createElement("span");
-            filename.textContent = image.filename;
-            score.textContent = `Relevance: ${image.score.toFixed(3)}`;
-            item.append(filename, score);
+
+          for (const chunk of result.retrieved) {
+            const item   = document.createElement("li");
+
+            // left side: badge + label
+            const left = document.createElement("div");
+            left.style.cssText = "display:flex;align-items:center;gap:8px;min-width:0;";
+            left.append(kindBadge(chunk.kind));
+            const lbl = document.createElement("span");
+            lbl.className   = "chunk-label";
+            lbl.textContent = chunk.label;
+            left.append(lbl);
+
+            // right side: score
+            const scoreEl = document.createElement("span");
+            scoreEl.className   = "chunk-score";
+            scoreEl.textContent = `Score: ${chunk.score.toFixed(3)}`;
+
+            item.append(left, scoreEl);
             retrievedList.append(item);
           }
-          answerCard.hidden = false;
+
+          answerCard.hidden  = false;
           status.textContent = "";
         } catch (error) {
           status.textContent = error.message || "Unable to contact the local server.";
