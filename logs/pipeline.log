@@ -1,0 +1,158 @@
+2026-11-18 10:33:59,442 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:33:59,513 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:33:59,537 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:34:00,294 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:34:00,849 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:34:00,851 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:34:00,881 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:34:00,904 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:34:00,939 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:34:01,465 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:34:01,485 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:34:01,486 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:34:01,501 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:41:38,389 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:41:38,461 [INFO] Saved markdown table file → 01_Employee_Data_Test__Employees.md
+2026-11-18 10:41:38,462 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:41:38,464 [INFO] Saved markdown table file → 01_Employee_Data_Test__Department_Summary.md
+2026-11-18 10:41:38,475 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:41:39,132 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:41:39,885 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:41:39,889 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Monthly_Sales.md
+2026-11-18 10:41:39,889 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:41:39,893 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Product_Performance.md
+2026-11-18 10:41:39,903 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:41:39,925 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:41:39,928 [INFO] Saved markdown table file → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM.md
+2026-11-18 10:41:39,932 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:41:40,352 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:41:40,355 [INFO] Saved markdown table file → sample_chart__Revenue.md
+2026-11-18 10:41:40,360 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:41:40,361 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:41:40,371 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:41:40,373 [INFO] Saved markdown table file → sample_table__Sales.md
+2026-11-18 10:48:05,001 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:48:05,033 [INFO] Saved markdown table file → 01_Employee_Data_Test__Employees.md
+2026-11-18 10:48:05,033 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:48:05,035 [INFO] Saved markdown table file → 01_Employee_Data_Test__Department_Summary.md
+2026-11-18 10:48:05,042 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:48:05,677 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:48:06,205 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:48:06,207 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Monthly_Sales.md
+2026-11-18 10:48:06,207 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:48:06,209 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Product_Performance.md
+2026-11-18 10:48:06,216 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:48:06,230 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:48:06,233 [INFO] Saved markdown table file → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM.md
+2026-11-18 10:48:06,237 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:48:06,741 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:48:06,744 [INFO] Saved markdown table file → sample_chart__Revenue.md
+2026-11-18 10:48:06,759 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:48:06,761 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:48:06,769 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:48:06,771 [INFO] Saved markdown table file → sample_table__Sales.md
+2026-11-18 10:48:30,408 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:48:30,436 [INFO] Saved markdown table file → 01_Employee_Data_Test__Employees.md
+2026-11-18 10:48:30,436 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:48:30,437 [INFO] Saved markdown table file → 01_Employee_Data_Test__Department_Summary.md
+2026-11-18 10:48:30,444 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:48:30,976 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:48:31,506 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:48:31,508 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Monthly_Sales.md
+2026-11-18 10:48:31,508 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:48:31,510 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Product_Performance.md
+2026-11-18 10:48:31,515 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:48:31,527 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:48:31,530 [INFO] Saved markdown table file → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM.md
+2026-11-18 10:48:31,534 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:48:31,981 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:48:31,984 [INFO] Saved markdown table file → sample_chart__Revenue.md
+2026-11-18 10:48:31,989 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:48:31,991 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:48:31,996 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:48:31,998 [INFO] Saved markdown table file → sample_table__Sales.md
+2026-11-18 10:48:32,000 [INFO] On-demand sync: found 6 new/modified file(s) to index: ['01_Employee_Data_Test.xlsx', '02_Sales_Charts_Test.xlsx', '03_Mechanical_BOM_and_Image_Test.xlsx', 'sample_chart.xlsx', 'sample_image.xlsx', 'sample_table.xlsx']
+2026-11-18 10:48:32,000 [INFO] Processing: 01_Employee_Data_Test.xlsx
+2026-11-18 10:48:32,007 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:48:32,011 [INFO] Saved markdown table file → 01_Employee_Data_Test__Employees.md
+2026-11-18 10:48:32,012 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:48:32,014 [INFO] Saved markdown table file → 01_Employee_Data_Test__Department_Summary.md
+2026-11-18 10:48:32,015 [INFO] Indexed 2 text (table) chunks for 01_Employee_Data_Test.xlsx
+2026-11-18 10:48:32,015 [INFO] Processing: 02_Sales_Charts_Test.xlsx
+2026-11-18 10:48:32,025 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:48:32,521 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:48:33,052 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:48:33,054 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Monthly_Sales.md
+2026-11-18 10:48:33,054 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:48:33,056 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Product_Performance.md
+2026-11-18 10:48:33,056 [INFO] Indexed 2 text (table) chunks for 02_Sales_Charts_Test.xlsx
+2026-11-18 10:48:33,057 [INFO] Indexed 2 image/chart chunks for 02_Sales_Charts_Test.xlsx
+2026-11-18 10:48:33,057 [INFO] Processing: 03_Mechanical_BOM_and_Image_Test.xlsx
+2026-11-18 10:48:33,061 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:48:33,074 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:48:33,077 [INFO] Saved markdown table file → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM.md
+2026-11-18 10:48:33,077 [INFO] Indexed 1 text (table) chunks for 03_Mechanical_BOM_and_Image_Test.xlsx
+2026-11-18 10:48:33,077 [INFO] Indexed 1 image/chart chunks for 03_Mechanical_BOM_and_Image_Test.xlsx
+2026-11-18 10:48:33,077 [INFO] Processing: sample_chart.xlsx
+2026-11-18 10:48:33,081 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:48:33,512 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:48:33,515 [INFO] Saved markdown table file → sample_chart__Revenue.md
+2026-11-18 10:48:33,515 [INFO] Indexed 1 text (table) chunks for sample_chart.xlsx
+2026-11-18 10:48:33,515 [INFO] Indexed 1 image/chart chunks for sample_chart.xlsx
+2026-11-18 10:48:33,516 [INFO] Processing: sample_image.xlsx
+2026-11-18 10:48:33,519 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:48:33,521 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:48:33,522 [INFO] Indexed 1 image/chart chunks for sample_image.xlsx
+2026-11-18 10:48:33,522 [INFO] Processing: sample_table.xlsx
+2026-11-18 10:48:33,527 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:48:33,529 [INFO] Saved markdown table file → sample_table__Sales.md
+2026-11-18 10:48:33,529 [INFO] Indexed 1 text (table) chunks for sample_table.xlsx
+2026-11-18 10:54:52,931 [INFO] No device provided, using cpu
+2026-11-18 10:54:53,339 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2 "HTTP/1.1 200 OK"
+2026-11-18 10:54:53,387 [INFO] Loading SentenceTransformer model from google/embeddinggemma-2.
+2026-11-18 10:54:56,792 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-18 10:54:57,402 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-18 10:54:57,737 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-18 10:54:57,997 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-18 10:55:00,910 [INFO] HTTP Request: GET https://huggingface.co/api/models/google/embeddinggemma-2 "HTTP/1.1 200 OK"
+2026-11-18 10:55:01,027 [INFO] Loaded 20 prompts with these keys: ['query', 'document', 'BitextMining', 'Classification', 'Clustering', 'CodeRetrieval', 'Document', 'FactChecking', 'InstructionRetrieval', 'MultilabelClassification', 'PairClassification', 'QuestionAnswering', 'Reranking', 'Retrieval', 'Retrieval-document', 'Retrieval-query', 'STS', 'SearchQuery', 'SentenceSimilarity', 'Summarization']
+2026-11-18 10:55:02,851 [INFO] === Indexing Excel files from: C:\Users\kotim\Downloads\multimodalembedding\excel_files ===
+2026-11-18 10:55:02,853 [INFO] Processing: 01_Employee_Data_Test.xlsx
+2026-11-18 10:55:02,873 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Employees': data=True visuals=False
+2026-11-18 10:55:02,917 [INFO] Saved markdown table file → 01_Employee_Data_Test__Employees.md
+2026-11-18 10:55:02,919 [INFO] Sheet '01_Employee_Data_Test.xlsx' | 'Department Summary': data=True visuals=False
+2026-11-18 10:55:02,923 [INFO] Saved markdown table file → 01_Employee_Data_Test__Department_Summary.md
+2026-11-18 10:55:02,924 [INFO] Processing: 02_Sales_Charts_Test.xlsx
+2026-11-18 10:55:02,947 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Monthly Sales': data=True visuals=True
+2026-11-18 10:55:03,933 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_0.png
+2026-11-18 10:55:04,799 [INFO] Rendered chart PNG → 02_Sales_Charts_Test__Monthly_Sales_chart_1.png
+2026-11-18 10:55:04,803 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Monthly_Sales.md
+2026-11-18 10:55:04,804 [INFO] Sheet '02_Sales_Charts_Test.xlsx' | 'Product Performance': data=True visuals=False
+2026-11-18 10:55:04,806 [INFO] Saved markdown table file → 02_Sales_Charts_Test__Product_Performance.md
+2026-11-18 10:55:04,807 [INFO] Processing: 03_Mechanical_BOM_and_Image_Test.xlsx
+2026-11-18 10:55:04,820 [INFO] Sheet '03_Mechanical_BOM_and_Image_Test.xlsx' | 'Mechanical BOM': data=True visuals=True
+2026-11-18 10:55:04,851 [INFO] Extracted embedded image → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM_img_0.png
+2026-11-18 10:55:04,856 [INFO] Saved markdown table file → 03_Mechanical_BOM_and_Image_Test__Mechanical_BOM.md
+2026-11-18 10:55:04,856 [INFO] Processing: sample_chart.xlsx
+2026-11-18 10:55:04,866 [INFO] Sheet 'sample_chart.xlsx' | 'Revenue': data=True visuals=True
+2026-11-18 10:55:05,544 [INFO] Rendered chart PNG → sample_chart__Revenue_chart_0.png
+2026-11-18 10:55:05,548 [INFO] Saved markdown table file → sample_chart__Revenue.md
+2026-11-18 10:55:05,548 [INFO] Processing: sample_image.xlsx
+2026-11-18 10:55:05,555 [INFO] Sheet 'sample_image.xlsx' | 'Visual': data=True visuals=True
+2026-11-18 10:55:05,559 [INFO] Extracted embedded image → sample_image__Visual_img_0.png
+2026-11-18 10:55:05,568 [INFO] Processing: sample_table.xlsx
+2026-11-18 10:55:05,574 [INFO] Sheet 'sample_table.xlsx' | 'Sales': data=True visuals=False
+2026-11-18 10:55:05,578 [INFO] Saved markdown table file → sample_table__Sales.md
+2026-11-18 10:55:31,753 [INFO] Indexed 7 text (table) chunks
+2026-11-18 10:56:04,690 [INFO] Indexed 5 image/chart chunks
+2026-11-18 10:56:04,730 [INFO] Server ready → open http://127.0.0.1:8000
+2026-11-18 10:56:22,155 [INFO] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-11-18 10:56:22,188 [INFO] 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-11-18 10:56:22,785 [INFO] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+2026-11-18 10:56:40,189 [INFO] Retrieved 3 chunks: [{'label': '01_Employee_Data_Test.xlsx :: Employees', 'score': 0.6683145761489868, 'kind': 'table'}, {'label': '01_Employee_Data_Test.xlsx :: Department Summary', 'score': 0.6516585350036621, 'kind': 'table'}, {'label': 'sample_table.xlsx :: Sales', 'score': 0.6374953985214233, 'kind': 'table'}]
+2026-11-18 10:59:07,505 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-11-18 10:59:32,844 [INFO] 127.0.0.1 - "POST /ask HTTP/1.1" 200 -
+2026-11-18 10:59:59,692 [INFO] Retrieved 3 chunks: [{'label': '03_Mechanical_BOM_and_Image_Test.xlsx :: Mechanical BOM', 'score': 0.7396160364151001, 'kind': 'table'}, {'label': '02_Sales_Charts_Test.xlsx :: Product Performance', 'score': 0.6665314435958862, 'kind': 'table'}, {'label': '03_Mechanical_BOM_and_Image_Test.xlsx :: Mechanical BOM', 'score': 0.6487972736358643, 'kind': 'image'}]
+2026-11-18 11:01:18,935 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-11-18 11:02:47,534 [INFO] 127.0.0.1 - "POST /ask HTTP/1.1" 200 -
+2026-11-18 11:03:22,627 [INFO] Shutting down

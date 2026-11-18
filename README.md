@@ -173,6 +173,8 @@ When a user asks a question:
 multimodalembedding/
 ├── excel_files/             # Place your .xlsx input files here
 ├── rendered_sheets/         # Auto-generated PNG snapshots of charts & extracted images
+├── markdown_tables/         # Auto-generated .md files of extracted tabular sheets
+├── logs/                    # Application and ingestion log files (pipeline.log)
 ├── chroma_db/               # Persistent ChromaDB vector store (SQLite + HNSW index)
 ├── web/                     # Web UI assets
 │   ├── index.html           # Single-page interface with Markdown rendering & badges

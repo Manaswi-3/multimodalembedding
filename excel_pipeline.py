@@ -50,13 +50,25 @@ PROJECT_DIR  = Path(__file__).resolve().parent
 EXCEL_DIR    = PROJECT_DIR / "excel_files"    # drop your .xlsx files here
 WEB_DIR      = PROJECT_DIR / "web"
 RENDERED_DIR = PROJECT_DIR / "rendered_sheets"  # auto-generated PNGs
+MARKDOWN_DIR = PROJECT_DIR / "markdown_tables"  # extracted markdown table files
+LOGS_DIR     = PROJECT_DIR / "logs"             # application log files
 RENDERED_DIR.mkdir(exist_ok=True)
+MARKDOWN_DIR.mkdir(exist_ok=True)
 EXCEL_DIR.mkdir(exist_ok=True)
+LOGS_DIR.mkdir(exist_ok=True)
 
 RELEVANCE_THRESHOLD = 0.5
 TOP_K = 3   # number of results shown in the UI
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+LOG_FILE = LOGS_DIR / "pipeline.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(str(LOG_FILE), encoding="utf-8")
+    ]
+)
 log = logging.getLogger(__name__)
 
 
@@ -276,15 +288,21 @@ def process_excel_file(xlsx_path: Path) -> list[ExcelChunk]:
             df = _sheet_to_dataframe(ws)
             md = _dataframe_to_markdown(df)
             if md:
+                md_content = f"# {xlsx_path.name} — {sheet_name}\n\n{md}\n"
+                md_file = MARKDOWN_DIR / f"{prefix}.md"
+                md_file.write_text(md_content, encoding="utf-8")
+                log.info("Saved markdown table file → %s.md", prefix)
+
                 chunks.append({
                     "kind": "text",
-                    "content": f"# {xlsx_path.name} — {sheet_name}\n\n{md}",
+                    "content": md_content.strip(),
                     "source_file": str(xlsx_path),
                     "sheet": sheet_name,
                     "metadata": {
                         "source_file": xlsx_path.name,
                         "sheet": sheet_name,
                         "type": "table",
+                        "md_path": str(md_file),
                     },
                 })
 
@@ -308,15 +326,21 @@ def process_excel_file(xlsx_path: Path) -> list[ExcelChunk]:
                 df = _sheet_to_dataframe(ws)
                 md = _dataframe_to_markdown(df)
                 if md:
+                    md_content = f"# {xlsx_path.name} — {sheet_name}\n\n{md}\n"
+                    md_file = MARKDOWN_DIR / f"{prefix}.md"
+                    md_file.write_text(md_content, encoding="utf-8")
+                    log.info("Saved markdown table file → %s.md", prefix)
+
                     chunks.append({
                         "kind": "text",
-                        "content": f"# {xlsx_path.name} — {sheet_name}\n\n{md}",
+                        "content": md_content.strip(),
                         "source_file": str(xlsx_path),
                         "sheet": sheet_name,
                         "metadata": {
                             "source_file": xlsx_path.name,
                             "sheet": sheet_name,
                             "type": "table",
+                            "md_path": str(md_file),
                         },
                     })
 
