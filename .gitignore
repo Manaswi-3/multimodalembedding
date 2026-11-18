@@ -10,6 +10,5 @@ wheels/
 .venv
 
 .mpl_cache/
-rendered_sheets/
-excel_files/
+
 
